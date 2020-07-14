@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev  #设置开发环境
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/mybatis-plus?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    password: root
+    username: root
+
+
+#配置日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1     #定义逻辑删除 1 (删除)
+      logic-not-delete-value: 0 #定义逻辑删除 0 (未删除)
